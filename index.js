@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-app.use(cors());
+
 const mongoose = require('mongoose');
 const routerCode = require('./routes/code');
 const routerToken = require('./routes/token');
@@ -19,6 +19,7 @@ connect()
 
 
 const app = express()
+app.use(cors());
 app.use(express.json())
 app.use(routerCode)
 app.use(routerToken)
