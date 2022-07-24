@@ -1,6 +1,9 @@
 const express = require('express');
 const routerCode = express.Router()
 const Codes = require('../models/code')
+routerCode.get('', async (req,res) => {
+   console.log("vl");
+})
 routerCode.post('/codes', async (req,res) => {
         try {
             const codes = await Codes(req.body).save()
