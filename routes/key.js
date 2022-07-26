@@ -35,7 +35,7 @@ routerKeys.get('/keys/:id', async (req,res) => {
 })
 routerKeys.delete('/keys/:id', async (req,res) => {
     try {
-        const keys = await Keys.findById({_id: req.params.id}).exec()
+        const keys = await Keys.findByIdAndDelete({_id: req.params.id}).exec()
         res.json(keys);
     } catch (error) {
         res.status(400).json({message: "Không thể xoá"})
